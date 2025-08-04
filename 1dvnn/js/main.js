@@ -40,9 +40,22 @@ $(window).on('resize', function () {
 
 const modal = document.querySelectorAll(".modal")
 let animSpd = 400
+//enable scroll
+function enableScroll() {
+    if (!document.querySelector(".modal.open")) {
+        document.body.classList.remove("no-scroll")
+    }
+}
+//disable scroll
+function disableScroll() {
+    if (!document.querySelector(".modal.open") && window.innerWidth < 768) {
+        document.body.classList.add("no-scroll");
+    }
+}
 //open modal
 function openModal(modal) {
     let activeModal = document.querySelector(".modal.open")
+    disableScroll()
     if (activeModal) {
         activeModal.classList.remove("open")
     }
@@ -51,6 +64,9 @@ function openModal(modal) {
 //close modal
 function closeModal(modal) {
     modal.classList.remove("open")
+    setTimeout(() => {
+        enableScroll()
+    }, animSpd);
 }
 // modal click outside
 if (modal) {
