@@ -5,7 +5,6 @@ function checkWidthAndUnslick() {
         }
     } else {
         if (!$('.advants__carousel').hasClass('slick-initialized')) {
-            console.log('.dkdkdk')
             $('.advants__carousel').slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -48,6 +47,7 @@ function enableScroll() {
         }
         document.body.style.paddingRight = '0px'
         document.body.classList.remove("no-scroll")
+        document.documentElement.classList.remove("no-scroll")
     }
 }
 //disable scroll
@@ -59,6 +59,7 @@ function disableScroll() {
         }
         document.body.style.paddingRight = paddingValue
         document.body.classList.add("no-scroll");
+        document.documentElement.classList.add("no-scroll")
     }
 }
 //open modal
