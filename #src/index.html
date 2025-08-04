@@ -1,0 +1,239 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+	@@include("_head.html")
+	<body class="second_page ">
+		@@include("_header.html")
+		<div class="container_page page_content">
+			<div class="content_container">
+				@@include("_breadcrumbs.html")
+				<h1 class="styled">Контактная информация</h1>
+				<div class="air p40"></div>
+				<div class="row flex-nowrap mr-0 ml-0 contacts-adap-hook">
+					<div class="contacts_left">
+
+						<h2 class="contacts_title">ул. Белинского, 66, Нижний Новгород</h2>
+						<div class="air p30"></div>
+						<div class="how">
+							<a href="https://yandex.ru/maps/?rtext=~56.312435,44.004154&rtt=auto" class="how_link">Как проехать</a><img src="include/images/how_arrow.svg" alt>
+						</div>
+						<div class="air p40"></div>
+						<div class="contacts_adress_fluid">
+							<p class="contacts_office">Отдел продаж:</p>
+							<p class="contacts_office_adress">ул. Белинского, 66, Нижний Новгород</p>
+						</div>
+						<div class="air p40"></div>
+						<div class="contacts_callback">
+							<div class="contacts_callback_phone">
+								<p class="contacts_callback_title">Связаться с нами</p>
+								<a class="contacts_callback_tophone" href="tel:+78312888808">+7 (831) 288-88-08</a>
+							</div>
+							<div class="contacts_callback_mail">
+								<p class="contacts_callback_title">Электронная почта</p>
+								<a class="contacts_callback_tomail" href="mailto:info@mail.ru">info@mail.ru</a>
+							</div>
+						</div>
+						<div class="air p40"></div>
+						<div class="work_hours_wrapper">
+							<p class="work_hours-text">Пн-Пт: 9:00 - 19:00</p>
+							<p class="work_hours-text">Сб-Вс: выходной</p>
+							<p class="work_hours-text hidden">Вс: выходной</p>
+						</div>
+						<div class="row mr-0 ml-0">
+							<div class="foot_social">
+								<ul class="footer__social-menu">
+									<li class="footer__social-item">
+										<a class="footer__social-link" target="_blank" href="https://vk.com/uds_developer_nn"><img src="img/vknew.svg" alt></a>
+									</li>
+
+									<li class="footer__social-item">
+										<a class="footer__social-link" target="_blank" href="https://t.me/uds_developer"><img src="img/telegramnew.svg" alt></a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="contacts_right">
+
+						<div>
+							<script>
+							    ymaps.ready(init2);
+							    function init2 ()
+							    {
+							
+							    	 myMap2 = new ymaps.Map("map2", {
+							    		 	center: [56.312435, 44.004154],
+							    	        zoom: 13,
+							    	        controls: [],
+							    	        behaviors: ['drag']
+							    	    });
+							
+							    	    myCollection = new ymaps.GeoObjectCollection();
+							
+							    	    myMap2.controls.add('zoomControl', {
+							    	        float: 'none',
+							    	        position: {
+							    	            right: 40,
+							    	            top: 5
+							    	        }
+							    	    });
+							
+							    	    	coords = [56.312435, 44.004154];
+							    	    	
+							    	    								
+								            myPlacemark = new ymaps.Placemark([coords[0], coords[1]], {
+									        	balloonContent: `
+													<div class="map_adress-wrapper">
+													<p class="map_adress-descr">Адрес</p>
+													<adress class="map_adress">ул. Белинского, 66, Нижний Новгород</adress>
+													</div>
+													<div class="map_tracking">
+													<a class="map_tracking-link" target="_blank" href="https://yandex.ru/maps/?rtext=~56.307991,43.989907&rtt=auto">Построить маршрут</a>
+													</div>
+													`
+									        }, {
+									        //draggable: true,
+									        iconLayout: 'default#image',
+							                iconImageHref: '',
+							                iconImageSize: [92, 116],
+							                iconImageOffset: [-45, -90],
+									        });
+											
+									    	myCollection.add(myPlacemark);
+											myMap2.geoObjects.add( myCollection );
+											myMap2.setCenter(coords, 16);
+											myPlacemark.balloon.open();
+											myMap2.controls.remove('zoomControl');
+											var position = myMap2.getGlobalPixelCenter();
+							
+											if ($(window).width()>=768)
+											myMap2.setGlobalPixelCenter([ position[0] + 0, position[1]]);
+											
+											//myMap2.setBounds( myCollection.getBounds(), {useMapMargin: true});
+							               
+											if ($(window).width()<768)
+											{
+												myMap2.behaviors.disable('drag');
+												myMap2.behaviors.disable('multiTouch');
+											}
+										    
+							
+							
+							    }
+							</script>
+
+							<div class="map_form">
+								<div class="bg"></div>
+								<div id="map2" style="height: 600px; border-top: 1px solid #CCCCCC;">
+									<div class="content_container d-none d-md-block">
+										<div class="form_container d-flex hidden">
+											<div class="form align-self-center">
+												<h2 class="styled">Заказать сайт для новостройки</h2>
+												<div class="address_container">
+													<div class="address">ул. Белинского, 66, Нижний Новгород</div>
+												</div>
+												<div class="air p20"></div>
+
+												<div class="marauto phone_container">
+													<div class="phone"><a href="tel://+73422222222">+7 (342) 222-22-22</a></div>
+													<div class="air p10"></div>
+													<div class="phone"><a href="tel://+73423333333">+7 (342) 333-33-33</a></div>
+													<div class="air p10"></div>
+												</div>
+
+												<div class="air p20"></div>
+												<div class="email_container">
+													<div class="email"><a href="mailto:info@mail.ru">info@mail.ru</a></div>
+												</div>
+												<div class="air p30"></div>
+												<div class="callback"><a class="fancybox btn" data-comment="Заказ звонка" href="#popup_callback">Заказать звонок</a></div>
+												<div class="air p20"></div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="air p100"></div>
+				<div class="content_container nonpadding">
+					<div class="main_form_container d-flex form_cust">
+						<div class="main_form">
+
+							<h2 class="styled">Остались вопросы?</h2>
+							<div class="descr">Отправьте заявку и мы проконсультируем Вас по всем вопросам!</div>
+							<div class="air p50"></div>
+
+							<form class="iblock_add_main_form_2" method="post">
+								<div class="d-flex">
+									<div class="form col-12 pr-0 pl-0">
+										<input type="hidden" name="sessid" id="sessid" value="a90a182f2c430602347d8c63d4958920">
+
+										<div class="form_field">
+											<div class="mb_pods">Ваше имя</div>
+											<input required placeholder="Ваше имя *" data-code type="text" name="name_v" size="30" value><br> </div>
+										<div class="form_field ff2">
+											<div class="mb_pods">Номер телефона</div>
+											<input required placeholder="+7 (999) 999-9999 *" data-code="PHONE" type="text" name="phone_v" size="30" value><br> </div>
+
+										<div class="flex_form flex-column">
+											<div class="clear"></div>
+
+											<div class="hidden">
+												<input type="text" class="page_url" name="page_url" value="https://1dvnn.ru/contacts/">
+											</div>
+
+											<div class="licence_block styled_switch checkbox_style">
+												<input id="rek_r" name="checkboxpromo" aria-required="true" type="checkbox" checked="checked">
+												<label for="rek_r"><a href="/soglasie-na-poluchenie-reklamnykh-rassylok/" target="_blank">Согласие на получение рекламно-информационных материалов</a></label>
+											</div>
+
+											<div class="licence_block styled_switch checkbox_style">
+												<input id="licenses_popup_CALLBACK_n1" name="licenses_popup_n2" required value="Y" aria-required="true" type="checkbox" checked="checked">
+												<label for="licenses_popup_CALLBACK_n1">Я ознакомлен и принимаю условия <a href="/politika-konfidentsialnosti/"> политики в отношении обработки персональных
+														данных</a></label>
+											</div>
+
+											<div class="licence_block styled_switch checkbox_style">
+												<input id="licenses_popup_CALLBACK" name="licenses_popup" required value="Y" aria-required="true" type="checkbox" checked="checked">
+												<label for="licenses_popup_CALLBACK">Я согласен на <a href="/soglasie-na-obrabotku-personalnykh-dannykh/">обработку своих персональных данных</a></label>
+											</div>
+
+											<div class="licence_block styled_switch checkbox_style  hidden">
+												Отправляя данные, вы соглашаетесь с <a href="/politika-konfidentsialnosti/" target="_blank">«Политикой конфиденциальности»</a>
+											</div>
+											<div class="clear"></div>
+
+											<div class="clear"></div>
+
+											<div class="air p10"></div>
+
+											<input type="submit" class="btn thiss l-form_btn" name="iblock_submitmain_form" value="Отправить">
+
+										</div>
+
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="main_form-img--wrapper">
+							<img src="include/images/contimg.jpg" alt>
+						</div>
+					</div>
+				</div>
+			</div>
+			@@include("_advants.html")
+		</div>
+		@@include("_popup.html")
+		@@include("_footer.html")
+		@@include("_modal.html")
+		@@include("_js.html")
+	</body>
+</html>
