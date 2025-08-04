@@ -43,12 +43,21 @@ let animSpd = 400
 //enable scroll
 function enableScroll() {
     if (!document.querySelector(".modal.open")) {
+        if (document.querySelector(".nonfixed_header")) {
+            document.querySelector(".nonfixed_header").style.paddingRight = '0px'
+        }
+        document.body.style.paddingRight = '0px'
         document.body.classList.remove("no-scroll")
     }
 }
 //disable scroll
 function disableScroll() {
-    if (!document.querySelector(".modal.open") && window.innerWidth < 768) {
+    if (!document.querySelector(".modal.open")) {
+        let paddingValue = window.innerWidth > 350 ? window.innerWidth - document.documentElement.clientWidth + 'px' : 0
+        if (document.querySelector(".nonfixed_header")) {
+            document.querySelector(".nonfixed_header").style.paddingRight = paddingValue
+        }
+        document.body.style.paddingRight = paddingValue
         document.body.classList.add("no-scroll");
     }
 }
