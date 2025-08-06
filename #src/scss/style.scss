@@ -1,2 +1,16 @@
 @import "advants";
 @import "modal";
+.sec-top {
+    margin-bottom: 40px;
+}
+@media (min-width: 1200px) {
+    .sec-top {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 40px;
+        align-items: center;
+    }                  
+    .sec-top h2 {
+        margin: 0
+    }
+}

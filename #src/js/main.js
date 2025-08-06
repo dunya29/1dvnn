@@ -1,3 +1,17 @@
+let margin = -80;
+$(document).on('click', '.js-anchor', function () {
+    let hrf = $(this).attr("href");
+    hrf = hrf.replace('/', '');
+    $("html, body").animate({
+        scrollTop: $(hrf).offset().top + margin + "px"
+    }, {
+        duration: 1600,
+        easing: "swing"
+    });
+    if ($(this).data('click')) {
+        $($(this).data('click')).trigger('click');
+    }
+}); 
 function checkWidthAndUnslick() {
     if (window.innerWidth >= 1200) {
         if ($('.advants__carousel').hasClass('slick-initialized')) {
